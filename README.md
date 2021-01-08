@@ -1,7 +1,7 @@
 # Laravel-Feature-Flags
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/codegaudi/laravel-feature-flags.svg?style=flat-square)](https://packagist.org/packages/codegaudi/laravel-feature-flags)
-[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/codegaudi/laravel-feature-flags/Tests/master?style=flat-square)](https://github.com/codegaudi/laravel-feature-flags/actions?query=workflow%3ATests+branch%3Amaster)
+[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/codegaudi/laravel-feature-flags/Tests/main?style=flat-square)](https://github.com/codegaudi/laravel-feature-flags/actions?query=workflow%3ATests+branch%3Amaster)
 [![Total Downloads](https://img.shields.io/packagist/dt/codegaudi/laravel-feature-flags.svg?style=flat-square)](https://packagist.org/packages/codegaudi/laravel-feature-flags)
 
 Laravel-Feature-Flags is a package which aims to add simple and easy to use feature flagging functionality to Laravel.
