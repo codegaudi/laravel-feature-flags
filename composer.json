@@ -1,17 +1,17 @@
 {
-    "name": ":vendor_name/:package_name",
-    "description": ":package_description",
+    "name": "samuelnitsche/laravel-feature-flags",
+    "description": "laravel-feature-flags",
     "keywords": [
-        ":vendor_name",
-        ":package_name"
+        "samuelnitsche",
+        "laravel-feature-flags"
     ],
-    "homepage": "https://github.com/:vendor_name/:package_name",
+    "homepage": "https://github.com/samuelnitsche/laravel-feature-flags",
     "license": "MIT",
     "authors": [
         {
-            "name": ":author_name",
-            "email": ":author_email",
-            "homepage": ":author_homepage",
+            "name": "Samuel Nitsche",
+            "email": "mail@samynitsche.de",
+            "homepage": "https://samynitsche.de",
             "role": "Developer"
         }
     ],
@@ -25,13 +25,13 @@
     },
     "autoload": {
         "psr-4": {
-            "Spatie\\Skeleton\\": "src",
-            "Spatie\\Skeleton\\Database\\Factories\\": "database/factories"
+            "SamuelNitsche\\LaravelFeatureFlags\\": "src",
+            "SamuelNitsche\\LaravelFeatureFlags\\Database\\Factories\\": "database/factories"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Spatie\\Skeleton\\Tests\\": "tests"
+            "SamuelNitsche\\LaravelFeatureFlags\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -45,10 +45,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Spatie\\Skeleton\\SkeletonServiceProvider"
+                "SamuelNitsche\\LaravelFeatureFlags\\LaravelFeatureFlagsServiceProvider"
             ],
             "aliases": {
-                "Skeleton": "Spatie\\Skeleton\\SkeletonFacade"
+                "LaravelFeatureFlags": "SamuelNitsche\\LaravelFeatureFlags\\LaravelFeatureFlagsFacade"
             }
         }
     },
@@ -57,11 +57,7 @@
     "funding": [
         {
             "type": "github",
-            "url": "https://github.com/sponsors/:vendor_name"
-        },
-        {
-            "type": "other",
-            "url": ":author_homepage"
+            "url": "https://github.com/sponsors/samuelnitsche"
         }
     ]
 }
