@@ -1,6 +1,4 @@
-# laravel-feature-flags
-
-**THIS PACKAGE IS CURRENTLY UNDER HEAVY DEVELOPMENT. DO NOT USE IN PRODUCTION YET.**
+# Laravel-Feature-Flags
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/samuelnitsche/laravel-feature-flags.svg?style=flat-square)](https://packagist.org/packages/samuelnitsche/laravel-feature-flags)
 [![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/samuelnitsche/laravel-feature-flags/run-tests?label=tests)](https://github.com/samuelnitsche/laravel-feature-flags/actions?query=workflow%3ATests+branch%3Amaster)
