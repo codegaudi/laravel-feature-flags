@@ -2,11 +2,89 @@
 
 namespace SamuelNitsche\LaravelFeatureFlags\Tests;
 
+use Illuminate\Foundation\Testing\RefreshDatabase;
+use SamuelNitsche\LaravelFeatureFlags\Database\Factories\FeatureFactory;
+use SamuelNitsche\LaravelFeatureFlags\Models\Feature;
+use SamuelNitsche\LaravelFeatureFlags\Tests\Models\User;
+
 class ExampleTest extends TestCase
 {
+    use RefreshDatabase;
+
     /** @test */
-    public function true_is_true()
+    public function it_has_features()
     {
-        $this->assertTrue(true);
+        $feature = new Feature;
+
+        $this->assertInstanceOf(Feature::class, $feature);
+    }
+
+    /** @test */
+    public function features_can_be_enabled()
+    {
+        $feature = FeatureFactory::new()->create([
+            'is_enabled' => false,
+        ]);
+
+        $this->assertFalse($feature->isEnabled());
+
+        $feature->enable();
+
+        $this->assertTrue($feature->isEnabled());
+    }
+
+    /** @test */
+    public function features_can_be_disabled()
+    {
+        $feature = FeatureFactory::new()->create([
+            'is_enabled' => true,
+        ]);
+
+        $this->assertTrue($feature->isEnabled());
+
+        $feature->disable();
+
+        $this->assertFalse($feature->isEnabled());
+    }
+
+    /** @test */
+    public function features_can_be_enabled_per_user()
+    {
+        $feature = FeatureFactory::new()->create();
+        $user = User::first();
+
+        $user->enableFeature($feature);
+
+        $this->assertTrue($user->hasFeature($feature));
+    }
+
+    /** @test */
+    public function features_can_be_disabled_per_user()
+    {
+        $feature = FeatureFactory::new()->create();
+        $user = User::first();
+
+        $user->enableFeature($feature);
+
+        $this->assertTrue($user->hasFeature($feature));
+
+        $user->disableFeature($feature);
+
+        $this->assertFalse($user->fresh()->hasFeature($feature));
+    }
+
+    /** @test */
+    public function features_for_users_are_disabled_when_feature_is_globally_disabled()
+    {
+        $feature = FeatureFactory::new()->create();
+        $user = User::first();
+
+        $user->enableFeature($feature);
+
+        $this->assertTrue($user->hasFeature($feature));
+
+        $feature->disable();
+
+        $this->assertFalse($user->fresh()->hasFeature($feature));
     }
 }
