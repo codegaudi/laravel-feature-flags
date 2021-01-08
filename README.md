@@ -43,6 +43,13 @@ Feature::create([
 ]);
 ```
 
+You can check if a feature is enabled using the `isEnabled` and `isDisabled` methods.
+
+```php
+$feature->isEnabled();
+$feature->isDisabled();
+```
+
 Of course you can add features to a model. You need to add the `HasFeatures` trait to the class of your choice
 
 ```php
