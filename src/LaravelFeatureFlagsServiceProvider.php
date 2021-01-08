@@ -3,17 +3,12 @@
 namespace SamuelNitsche\LaravelFeatureFlags;
 
 use Illuminate\Support\ServiceProvider;
-use SamuelNitsche\LaravelFeatureFlags\Commands\LaravelFeatureFlagsCommand;
 
 class LaravelFeatureFlagsServiceProvider extends ServiceProvider
 {
     public function boot()
     {
         if ($this->app->runningInConsole()) {
-            $this->publishes([
-                __DIR__ . '/../config/laravel-feature-flags.php' => config_path('laravel-feature-flags.php'),
-            ], 'config');
-
             $migrationFileNames = [
                 'create_features_table.php',
                 'create_featurables_table.php',
@@ -26,16 +21,7 @@ class LaravelFeatureFlagsServiceProvider extends ServiceProvider
                     ], 'migrations');
                 }
             }
-
-            $this->commands([
-                LaravelFeatureFlagsCommand::class,
-            ]);
         }
-    }
-
-    public function register()
-    {
-        $this->mergeConfigFrom(__DIR__ . '/../config/laravel-feature-flags.php', 'laravel-feature-flags');
     }
 
     public static function migrationFileExists(string $migrationFileName): bool

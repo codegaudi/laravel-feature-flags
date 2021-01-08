@@ -6,8 +6,19 @@
 [![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/samuelnitsche/laravel-feature-flags/run-tests?label=tests)](https://github.com/samuelnitsche/laravel-feature-flags/actions?query=workflow%3ATests+branch%3Amaster)
 [![Total Downloads](https://img.shields.io/packagist/dt/samuelnitsche/laravel-feature-flags.svg?style=flat-square)](https://packagist.org/packages/samuelnitsche/laravel-feature-flags)
 
+Laravel-Feature-Flags is a package which aims to add simple and easy to use feature flagging functionality to Laravel.
 
-TBD
+## What is feature flagging?
+
+Feature flagging is a way to enable and disable features in your application.
+
+For example:
+* Push your new feature to production but enable it at a moment in the future
+* Enable new features for small set of users
+
+This package allows you to define a feature and
+* enable or disable it globally
+* enable or disable it for any type of model in your application
 
 ## Installation
 
@@ -24,21 +35,34 @@ php artisan vendor:publish --provider="SamuelNitsche\LaravelFeatureFlags\Laravel
 php artisan migrate
 ```
 
-You can publish the config file with:
-```bash
-php artisan vendor:publish --provider="SamuelNitsche\LaravelFeatureFlags\LaravelFeatureFlagsServiceProvider" --tag="config"
-```
-
-This is the contents of the published config file:
-
-```php
-return [
-];
-```
-
 ## Usage
 
-TBD
+First of all you have to define a new feature. Features are just normal eloquent models so you can create a new feature like this.
+```php
+Feature::create([
+    'name' => 'my-feature',
+    'is_enabled' => true,
+]);
+```
+
+Of course you can add features to a model. You need to add the `HasFeatures` trait to the class of your choice
+
+```php
+use SamuelNitsche\LaravelFeatureFlags\Traits\HasFeatures;
+
+class User extends Model
+{
+    use HasFeatures;
+}
+```
+
+Next, enable the feature using the `enableFeature` method.
+
+```php
+$user = User::first();
+$feature = Feature::whereName('my-feature')->first();
+$user->enableFeature($feature);
+```
 
 ## Testing
 
