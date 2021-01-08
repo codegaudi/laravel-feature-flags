@@ -1,8 +1,8 @@
 # Laravel-Feature-Flags
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/samuelnitsche/laravel-feature-flags.svg?style=flat-square)](https://packagist.org/packages/samuelnitsche/laravel-feature-flags)
-[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/samuelnitsche/laravel-feature-flags/Tests/master?style=flat-square)](https://github.com/samuelnitsche/laravel-feature-flags/actions?query=workflow%3ATests+branch%3Amaster)
-[![Total Downloads](https://img.shields.io/packagist/dt/samuelnitsche/laravel-feature-flags.svg?style=flat-square)](https://packagist.org/packages/samuelnitsche/laravel-feature-flags)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/codegaudi/laravel-feature-flags.svg?style=flat-square)](https://packagist.org/packages/codegaudi/laravel-feature-flags)
+[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/codegaudi/laravel-feature-flags/Tests/master?style=flat-square)](https://github.com/codegaudi/laravel-feature-flags/actions?query=workflow%3ATests+branch%3Amaster)
+[![Total Downloads](https://img.shields.io/packagist/dt/codegaudi/laravel-feature-flags.svg?style=flat-square)](https://packagist.org/packages/codegaudi/laravel-feature-flags)
 
 Laravel-Feature-Flags is a package which aims to add simple and easy to use feature flagging functionality to Laravel.
 
@@ -23,13 +23,13 @@ This package allows you to define a feature and
 You can install the package via composer:
 
 ```bash
-composer require samuelnitsche/laravel-feature-flags
+composer require codegaudi/laravel-feature-flags
 ```
 
 You can publish and run the migrations with:
 
 ```bash
-php artisan vendor:publish --provider="SamuelNitsche\LaravelFeatureFlags\LaravelFeatureFlagsServiceProvider" --tag="migrations"
+php artisan vendor:publish --provider="Codegaudi\LaravelFeatureFlags\LaravelFeatureFlagsServiceProvider" --tag="migrations"
 php artisan migrate
 ```
 
@@ -53,7 +53,7 @@ $feature->isDisabled();
 Of course you can add features to a model. You need to add the `HasFeatures` trait to the class of your choice
 
 ```php
-use SamuelNitsche\LaravelFeatureFlags\Traits\HasFeatures;
+use Codegaudi\LaravelFeatureFlags\Traits\HasFeatures;
 
 class User extends Model
 {
@@ -89,7 +89,7 @@ Please review [our security policy](../../security/policy) on how to report secu
 
 ## Credits
 
-- [Samuel Nitsche](https://github.com/SamuelNitsche)
+- [Samuel Nitsche](https://github.com/samuelnitsche)
 - [All Contributors](../../contributors)
 
 ## License

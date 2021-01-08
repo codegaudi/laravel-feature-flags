@@ -1,6 +1,6 @@
 <?php
 
-namespace SamuelNitsche\LaravelFeatureFlags\Models;
+namespace Codegaudi\LaravelFeatureFlags\Models;
 
 use Illuminate\Database\Eloquent\Model;
 

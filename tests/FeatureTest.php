@@ -1,13 +1,13 @@
 <?php
 
-namespace SamuelNitsche\LaravelFeatureFlags\Tests;
+namespace Codegaudi\LaravelFeatureFlags\Tests;
 
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use SamuelNitsche\LaravelFeatureFlags\Database\Factories\FeatureFactory;
-use SamuelNitsche\LaravelFeatureFlags\Models\Feature;
-use SamuelNitsche\LaravelFeatureFlags\Tests\Models\User;
+use Codegaudi\LaravelFeatureFlags\Database\Factories\FeatureFactory;
+use Codegaudi\LaravelFeatureFlags\Models\Feature;
+use Codegaudi\LaravelFeatureFlags\Tests\Models\User;
 
-class ExampleTest extends TestCase
+class FeatureTest extends TestCase
 {
     use RefreshDatabase;
 

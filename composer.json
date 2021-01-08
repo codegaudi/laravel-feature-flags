@@ -1,11 +1,11 @@
 {
-    "name": "samuelnitsche/laravel-feature-flags",
+    "name": "codegaudi/laravel-feature-flags",
     "description": "laravel-feature-flags",
     "keywords": [
-        "samuelnitsche",
+        "codegaudi",
         "laravel-feature-flags"
     ],
-    "homepage": "https://github.com/samuelnitsche/laravel-feature-flags",
+    "homepage": "https://github.com/codegaudi/laravel-feature-flags",
     "license": "MIT",
     "authors": [
         {
@@ -26,13 +26,13 @@
     },
     "autoload": {
         "psr-4": {
-            "SamuelNitsche\\LaravelFeatureFlags\\": "src",
-            "SamuelNitsche\\LaravelFeatureFlags\\Database\\Factories\\": "database/factories"
+            "Codegaudi\\LaravelFeatureFlags\\": "src",
+            "Codegaudi\\LaravelFeatureFlags\\Database\\Factories\\": "database/factories"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "SamuelNitsche\\LaravelFeatureFlags\\Tests\\": "tests"
+            "Codegaudi\\LaravelFeatureFlags\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -46,10 +46,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "SamuelNitsche\\LaravelFeatureFlags\\LaravelFeatureFlagsServiceProvider"
+                "Codegaudi\\LaravelFeatureFlags\\LaravelFeatureFlagsServiceProvider"
             ],
             "aliases": {
-                "LaravelFeatureFlags": "SamuelNitsche\\LaravelFeatureFlags\\LaravelFeatureFlagsFacade"
+                "LaravelFeatureFlags": "Codegaudi\\LaravelFeatureFlags\\LaravelFeatureFlagsFacade"
             }
         }
     },
@@ -58,7 +58,7 @@
     "funding": [
         {
             "type": "github",
-            "url": "https://github.com/sponsors/samuelnitsche"
+            "url": "https://github.com/sponsors/codegaudi"
         }
     ]
 }

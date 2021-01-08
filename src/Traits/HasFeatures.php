@@ -1,8 +1,8 @@
 <?php
 
-namespace SamuelNitsche\LaravelFeatureFlags\Traits;
+namespace Codegaudi\LaravelFeatureFlags\Traits;
 
-use SamuelNitsche\LaravelFeatureFlags\Models\Feature;
+use Codegaudi\LaravelFeatureFlags\Models\Feature;
 
 trait HasFeatures
 {

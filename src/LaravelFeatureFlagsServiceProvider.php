@@ -1,6 +1,6 @@
 <?php
 
-namespace SamuelNitsche\LaravelFeatureFlags;
+namespace Codegaudi\LaravelFeatureFlags;
 
 use Illuminate\Support\ServiceProvider;
 

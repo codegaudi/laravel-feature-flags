@@ -1,9 +1,9 @@
 <?php
 
-namespace SamuelNitsche\LaravelFeatureFlags\Database\Factories;
+namespace Codegaudi\LaravelFeatureFlags\Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-use SamuelNitsche\LaravelFeatureFlags\Models\Feature;
+use Codegaudi\LaravelFeatureFlags\Models\Feature;
 
 class FeatureFactory extends Factory
 {

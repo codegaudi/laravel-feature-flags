@@ -1,12 +1,12 @@
 <?php
 
-namespace SamuelNitsche\LaravelFeatureFlags\Tests;
+namespace Codegaudi\LaravelFeatureFlags\Tests;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Database\Schema\Blueprint;
 use Orchestra\Testbench\TestCase as Orchestra;
-use SamuelNitsche\LaravelFeatureFlags\LaravelFeatureFlagsServiceProvider;
-use SamuelNitsche\LaravelFeatureFlags\Tests\Models\User;
+use Codegaudi\LaravelFeatureFlags\LaravelFeatureFlagsServiceProvider;
+use Codegaudi\LaravelFeatureFlags\Tests\Models\User;
 
 class TestCase extends Orchestra
 {
@@ -15,7 +15,7 @@ class TestCase extends Orchestra
         parent::setUp();
 
         Factory::guessFactoryNamesUsing(
-            fn (string $modelName) => 'SamuelNitsche\\LaravelFeatureFlags\\Database\\Factories\\'.class_basename($modelName).'Factory'
+            fn (string $modelName) => 'Codegaudi\\LaravelFeatureFlags\\Database\\Factories\\'.class_basename($modelName).'Factory'
         );
 
         User::create(['name' => 'Test User', 'email' => 'test@user.com']);
