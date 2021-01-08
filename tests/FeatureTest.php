@@ -2,10 +2,10 @@
 
 namespace Codegaudi\LaravelFeatureFlags\Tests;
 
-use Illuminate\Foundation\Testing\RefreshDatabase;
 use Codegaudi\LaravelFeatureFlags\Database\Factories\FeatureFactory;
 use Codegaudi\LaravelFeatureFlags\Models\Feature;
 use Codegaudi\LaravelFeatureFlags\Tests\Models\User;
+use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class FeatureTest extends TestCase
 {
