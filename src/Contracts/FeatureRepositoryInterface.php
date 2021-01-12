@@ -2,8 +2,12 @@
 
 namespace Codegaudi\LaravelFeatureFlags\Contracts;
 
+use Codegaudi\LaravelFeatureFlags\Models\Feature;
+
 interface FeatureRepositoryInterface
 {
+    public function findByName($name): ?Feature;
+
     public function save($name, $isEnabled): bool;
 
     public function remove($name): bool;

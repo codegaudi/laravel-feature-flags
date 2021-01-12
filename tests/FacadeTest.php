@@ -3,6 +3,7 @@
 namespace Codegaudi\LaravelFeatureFlags\Tests;
 
 use Codegaudi\LaravelFeatureFlags\Facades\Feature;
+use Codegaudi\LaravelFeatureFlags\Models\Feature as FeatureModel;
 
 class FacadeTest extends TestCase
 {
@@ -15,6 +16,14 @@ class FacadeTest extends TestCase
         $this->fake = Feature::fake();
 
         Feature::add('my-feature', false);
+    }
+
+    /** @test */
+    public function it_finds_features_by_name()
+    {
+        $feature = $this->fake->findByName('my-feature');
+
+        $this->assertInstanceOf(FeatureModel::class, $feature);
     }
 
     /** @test */

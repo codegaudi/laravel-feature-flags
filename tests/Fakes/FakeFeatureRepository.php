@@ -3,11 +3,19 @@
 namespace Codegaudi\LaravelFeatureFlags\Tests\Fakes;
 
 use Codegaudi\LaravelFeatureFlags\Contracts\FeatureRepositoryInterface;
+use Codegaudi\LaravelFeatureFlags\Models\Feature;
 use PHPUnit\Framework\Assert;
 
 class FakeFeatureRepository implements FeatureRepositoryInterface
 {
     public $features = [];
+
+    public function findByName($name): ?Feature
+    {
+        return new Feature([
+            'name' =>  $this->features[$name],
+        ]);
+    }
 
     public function save($name, $isEnabled): bool
     {

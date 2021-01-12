@@ -3,6 +3,7 @@
 namespace Codegaudi\LaravelFeatureFlags;
 
 use Codegaudi\LaravelFeatureFlags\Contracts\FeatureRepositoryInterface;
+use Codegaudi\LaravelFeatureFlags\Models\Feature;
 
 class FeatureManager
 {
@@ -11,6 +12,11 @@ class FeatureManager
     public function __construct(FeatureRepositoryInterface $repository)
     {
         $this->repository = $repository;
+    }
+
+    public function findByName($name): ?Feature
+    {
+        return $this->repository->findByName($name);
     }
 
     public function add($name, $isEnabled = true): bool

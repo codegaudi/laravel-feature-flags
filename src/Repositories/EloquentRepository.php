@@ -7,6 +7,11 @@ use Codegaudi\LaravelFeatureFlags\Models\Feature;
 
 class EloquentRepository implements FeatureRepositoryInterface
 {
+    public function findByName($name): ?Feature
+    {
+        return Feature::where('name', $name)->firstOrFail();
+    }
+
     public function save($name, $isEnabled): bool
     {
         return Feature::where('name', $name)
