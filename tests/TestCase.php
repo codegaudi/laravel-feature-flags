@@ -2,11 +2,11 @@
 
 namespace Codegaudi\LaravelFeatureFlags\Tests;
 
+use Codegaudi\LaravelFeatureFlags\LaravelFeatureFlagsServiceProvider;
+use Codegaudi\LaravelFeatureFlags\Tests\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Database\Schema\Blueprint;
 use Orchestra\Testbench\TestCase as Orchestra;
-use Codegaudi\LaravelFeatureFlags\LaravelFeatureFlagsServiceProvider;
-use Codegaudi\LaravelFeatureFlags\Tests\Models\User;
 
 class TestCase extends Orchestra
 {
