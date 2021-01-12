@@ -13,7 +13,7 @@ class FakeFeatureRepository implements FeatureRepositoryInterface
     public function findByName($name): ?Feature
     {
         return new Feature([
-            'name' =>  $this->features[$name],
+            'name' => $this->features[$name],
         ]);
     }
 
