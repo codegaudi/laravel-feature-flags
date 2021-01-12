@@ -35,19 +35,39 @@ php artisan migrate
 
 ## Usage
 
-First of all you have to define a new feature. Features are just normal eloquent models so you can create a new feature like this.
+First of all you have to define a new feature. This can be done using the `Feature` facade.
 ```php
-Feature::create([
-    'name' => 'my-feature',
-    'is_enabled' => true,
-]);
+use Codegaudi\LaravelFeatureFlags\Facades;
+
+Feature::add($name = 'my-feature', $isEnabled = true);
+```
+
+You can also get the underlying eloquent model.
+```php
+use Codegaudi\LaravelFeatureFlags\Facades;
+
+Feature::findByName('my-feature');
+```
+
+You can enable or disable them using the following methods.
+```php
+use Codegaudi\LaravelFeatureFlags\Facades;
+
+Feature::enable('my-feature');
+Feature::disable('my-feature');
 ```
 
 You can check if a feature is enabled using the `isEnabled` and `isDisabled` methods.
 
 ```php
-$feature->isEnabled();
-$feature->isDisabled();
+Feature::isEnabled('my-feature');
+Feature::isDisabled('my-feature');
+```
+
+To remove the feature from your application, simpy call the `remove` method.
+
+```php
+Feature::remove('my-feature');
 ```
 
 Of course you can add features to a model. You need to add the `HasFeatures` trait to the class of your choice
@@ -65,8 +85,7 @@ Next, enable the feature using the `enableFeature` method.
 
 ```php
 $user = User::first();
-$feature = Feature::whereName('my-feature')->first();
-$user->enableFeature($feature);
+$user->enableFeature(Feature::findByName('my-feature'));
 ```
 
 ## Testing
