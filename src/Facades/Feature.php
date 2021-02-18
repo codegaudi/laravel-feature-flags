@@ -3,7 +3,7 @@
 namespace Codegaudi\LaravelFeatureFlags\Facades;
 
 use Codegaudi\LaravelFeatureFlags\FeatureManager;
-use Codegaudi\LaravelFeatureFlags\Tests\Fakes\FakeFeatureRepository;
+use Codegaudi\LaravelFeatureFlags\Repositories\FakeFeatureRepository;
 use Illuminate\Support\Facades\Facade;
 
 class Feature extends Facade

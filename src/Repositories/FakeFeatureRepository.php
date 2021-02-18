@@ -1,6 +1,6 @@
 <?php
 
-namespace Codegaudi\LaravelFeatureFlags\Tests\Fakes;
+namespace Codegaudi\LaravelFeatureFlags\Repositories;
 
 use Codegaudi\LaravelFeatureFlags\Contracts\FeatureRepositoryInterface;
 use Codegaudi\LaravelFeatureFlags\Models\Feature;
