@@ -1,0 +1,33 @@
+image: alpine/latest
+packages:
+  - php7
+  - php7-dom
+  - php7-curl
+  - php7-xml
+  - php7-mbstring
+  - php7-zip
+  - php7-pcntl
+  - php7-pdo
+  - php7-sqlite3
+  - php7-pdo_sqlite
+  - php7-bcmath
+  - php7-soap
+  - php7-intl
+  - php7-gd
+  - php7-exif
+  - php7-iconv
+  - php7-imagick
+  - php7-fileinfo
+  - php7-xmlwriter
+  - php7-xmlreader
+  - php7-tokenizer
+  - composer
+sources:
+  - https://github.com/codegaudi/laravel-feature-flags.git
+tasks:
+  - setup: |
+      cd laravel-feature-flags
+      composer install -n --prefer-dist
+  - run_psalm: |
+      cd laravel-feature-flags
+      ./vendor/bin/psalm --output-format=github

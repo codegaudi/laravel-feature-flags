@@ -1,0 +1,34 @@
+image: alpine/latest
+packages:
+  - php8
+  - php8-dom
+  - php8-curl
+  - php8-xml
+  - php8-mbstring
+  - php8-zip
+  - php8-pcntl
+  - php8-pdo
+  - php8-sqlite3
+  - php8-pdo_sqlite
+  - php8-bcmath
+  - php8-soap
+  - php8-intl
+  - php8-gd
+  - php8-exif
+  - php8-iconv
+  - php8-imagick
+  - php8-fileinfo
+  - php8-xmlwriter
+  - php8-xmlreader
+  - php8-tokenizer
+  - composer
+sources:
+  - https://github.com/codegaudi/laravel-feature-flags.git
+tasks:
+  - setup: |
+      cd laravel-feature-flags
+      composer require "laravel/framework:8.*" "orchestra/testbench:6.*" --no-interaction --no-update
+      composer update --prefer-stable --prefer-dist --no-interaction
+  - test: |
+      cd laravel-feature-flags
+      vendor/bin/phpunit
