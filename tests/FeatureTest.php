@@ -14,7 +14,7 @@ class FeatureTest extends TestCase
     /** @test */
     public function it_has_features()
     {
-        $feature = new Feature;
+        $feature = new Feature();
 
         $this->assertInstanceOf(Feature::class, $feature);
     }

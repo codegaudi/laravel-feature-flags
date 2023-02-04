@@ -18,7 +18,7 @@ class LaravelFeatureFlagsServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->singleton(FeatureRepositoryInterface::class, function () {
-            return new EloquentRepository;
+            return new EloquentRepository();
         });
     }
 

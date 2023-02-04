@@ -16,7 +16,7 @@ class EloquentRepository implements FeatureRepositoryInterface
     {
         return Feature::where('name', $name)
             ->firstOr(function () {
-                return new Feature;
+                return new Feature();
             })
             ->fill([
                 'name' => $name,
