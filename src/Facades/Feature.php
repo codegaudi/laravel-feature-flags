@@ -10,7 +10,7 @@ class Feature extends Facade
 {
     public static function fake()
     {
-        static::swap(new FeatureManager($fake = new FakeFeatureRepository));
+        static::swap(new FeatureManager($fake = new FakeFeatureRepository()));
 
         return $fake;
     }

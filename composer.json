@@ -16,12 +16,12 @@
         }
     ],
     "require": {
-        "php": "^8.0",
-        "illuminate/contracts": "^9.0"
+        "php": "^8.0 || ^8.1",
+        "illuminate/contracts": "^9.0 || ^10.0"
     },
     "require-dev": {
-        "orchestra/testbench": "^7.0",
-        "phpunit/phpunit": "^9.3",
+        "orchestra/testbench": "^7.0 || ^8.0",
+        "phpunit/phpunit": "^9.3 || ^10.0",
         "mockery/mockery": "^1.4"
     },
     "autoload": {

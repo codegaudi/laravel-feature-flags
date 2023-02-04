@@ -15,7 +15,7 @@ class EloquentRepositoryTest extends TestCase
     {
         parent::setUp();
 
-        $this->repository = new EloquentRepository;
+        $this->repository = new EloquentRepository();
     }
 
     /** @test */
